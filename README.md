@@ -26,6 +26,55 @@ import VXETablePluginValidator from 'vxe-table-plugin-validator'
 VXETable.use(VXETablePluginValidator)
 ```
 
+## API
+
+### Validator codes
+
+| code 编码 | describe 描述 | params 参数 |
+|------|------|------|
+| MOBILE_NUMBER | 手机号13位 | — |
+| EMAIL_ADDRESS  | 邮箱地址 | — |
+| IDENTITY_CARD  | 身份证号码 | — |
+| IP_ADDRESS  | IP地址 | — |
+| URL  | URL地址 | — |
+| PLATE_NUMBER  | 车牌号 | — |
+
+## Demo
+
+```html
+<vxe-table
+  :data="tableData"
+  :edit-config="{trigger: 'click', mode: 'cell'}"
+  :edit-rules="editRules">
+  <vxe-column type="seq" width="60"></vxe-column>
+  <vxe-column field="name" title="Name" :edit-render="{name: 'input'}"></vxe-column>
+  <vxe-column field="mobile" title="Mobile" :edit-render="{name: 'input'}"></vxe-column>
+  <vxe-column field="email" title="Email" :edit-render="{name: 'input'}"></vxe-column>
+</vxe-table>
+```
+
+```javascript
+export default {
+  data () {
+    return {
+      tableData: [
+        { id: 100,  name: 'test1', mobile: '', email: '' },
+        { id: 101,  name: 'test2', mobile: '', email: '' },
+        { id: 102,  name: 'test3', mobile: '', email: '' }
+      ],
+      editRules: {
+        mobile: [
+          { required: true, validator: 'MOBILE_NUMBER' }
+        ],
+        email: [
+          { required: true, validator: 'EMAIL_ADDRESS' }
+        ]
+      }
+    }
+  }
+}
+```
+
 ## License
 
 MIT License, 2019-present, Xu Liangzhan
