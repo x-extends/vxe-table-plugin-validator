@@ -23,10 +23,13 @@ function createVaildRule (checkMethod: (value: any, rule: ColumnEditRule | FormR
  * 基于 vxe-table 的表格插件，提供一些常用的校验
  */
 export const VXETablePluginValidator = {
-  install (vxetablecore: VXETableCore) {
-    const { validators } = vxetablecore
+  install (vxetable: VXETableCore) {
+    // 检查版本
+    if (!/^(2|3)\./.test(vxetable.version)) {
+      console.error('[vxe-table-plugin-validator] Version vxe-table 3.x is required')
+    }
 
-    validators.mixin({
+    vxetable.validators.mixin({
       // 手机号码，11位
       MOBILE_NUMBER: createVaildRule((value, rule) => {
         if (rule.required || value) {
