@@ -20,13 +20,16 @@ function createVaildRule (checkMethod: (value: any, rule: VxeTableDefines.Valida
 }
 
 /**
- * 基于 vxe-table 的表格插件，提供一些常用的校验
+ * 基于 vxe-table 的表格扩展插件，提供常用的校验配置
  */
 export const VXETablePluginValidator = {
-  install (vxetablecore: VXETableCore) {
-    const { validators } = vxetablecore
+  install (vxetable: VXETableCore) {
+    // 检查版本
+    if (!/^(4)\./.test(vxetable.version)) {
+      console.error('[vxe-table-plugin-validator] Version vxe-table 4.x is required')
+    }
 
-    validators.mixin({
+    vxetable.validators.mixin({
       // 手机号码，11位
       MOBILE_NUMBER: createVaildRule((value, rule) => {
         if (rule.required || value) {
