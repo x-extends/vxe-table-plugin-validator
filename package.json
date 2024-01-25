@@ -1,6 +1,6 @@
 {
   "name": "vxe-table-plugin-validator",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "基于 vxe-table 的表格扩展插件，提供常用的校验配置",
   "scripts": {
     "lib": "gulp build"
@@ -49,8 +49,8 @@
     "sass": "^1.55.0",
     "typescript": "^4.6.4",
     "vue": "^3.3.4",
-    "vxe-table": "^4.5.10",
-    "xe-utils": "^3.5.13"
+    "vxe-table": "^4.5.18",
+    "xe-utils": "^3.5.18"
   },
   "peerDependencies": {
     "vxe-table": "^4.5.0"
