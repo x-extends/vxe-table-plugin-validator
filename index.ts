@@ -20,13 +20,13 @@ function createVaildRule (checkMethod: (value: any, rule: ColumnEditRule | FormR
 }
 
 /**
- * 基于 vxe-table 的表格插件，提供一些常用的校验
+ * 基于 vxe-table 的表格扩展插件，提供常用的校验配置
  */
 export const VXETablePluginValidator = {
   install (vxetable: VXETableCore) {
     // 检查版本
     if (!/^(2|3)\./.test(vxetable.version)) {
-      console.error('[vxe-table-plugin-validator] Version vxe-table 3.x is required')
+      console.error('[vxe-table-plugin-validator 3.x] Version vxe-table 3.x is required')
     }
 
     vxetable.validators.mixin({
