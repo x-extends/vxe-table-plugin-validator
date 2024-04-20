@@ -25,7 +25,7 @@ function createVaildRule (checkMethod: (value: any, rule: ColumnEditRule | FormR
 export const VXETablePluginValidator = {
   install (vxetable: VXETableCore) {
     // 检查版本
-    if (!/^(2|3)\./.test(vxetable.version)) {
+    if (!/^(3)\./.test(vxetable.version)) {
       console.error('[vxe-table-plugin-validator 3.x] Version vxe-table 3.x is required')
     }
 
