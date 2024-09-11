@@ -1,4 +1,4 @@
-import { VXETableCore, ColumnEditRule, FormRule, VxeGlobalValidatorsHandles } from 'vxe-table'
+import { VXETableCore, VxeGlobalValidatorsHandles } from 'vxe-table'
 
 const reMobile = /^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$/
 const reEmail = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/
@@ -7,7 +7,7 @@ const reIp = /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4
 const reUrl = /^((https?|ftp|file):\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\w.-]*)*\/?$/
 const rePlateNumber = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1}$/
 
-function createVaildRule (checkMethod: (value: any, rule: ColumnEditRule | FormRule) => any) {
+function createVaildRule (checkMethod: (value: any, rule: any) => any) {
   const validOpts: VxeGlobalValidatorsHandles.ValidatorsOptions = {
     cellValidatorMethod ({ cellValue, rule }) {
       return checkMethod(cellValue, rule)
