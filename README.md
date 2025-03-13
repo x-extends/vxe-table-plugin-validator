@@ -5,7 +5,7 @@
 [![npm downloads](https://img.shields.io/npm/dm/vxe-table-plugin-validator.svg?style=flat-square)](http://npm-stat.com/charts.html?package=vxe-table-plugin-validator)
 [![npm license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
-基于 [vxe-table](https://github.com/xuliangzhan/vxe-table) 的表格插件，提供一些常用的校验
+基于 [vxe-table](https://github.com/x-extends/vxe-table) 的表格插件，提供一些常用的校验
 
 ## Compatibility
 
